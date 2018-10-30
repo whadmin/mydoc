@@ -1,0 +1,74 @@
+Classfile /D:/mydoc/jvm/test.class
+  Last modified 2018-10-30; size 357 bytes
+  MD5 checksum 0f52b2edf2687db7117650c2b5d0e57a
+  Compiled from "test.java"
+public class test
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #7.#21         // java/lang/Object."<init>":()V
+   #2 = Fieldref           #6.#22         // test.m:I
+   #3 = Double             3.14d
+   #5 = Fieldref           #6.#23         // test.PI:D
+   #6 = Class              #24            // test
+   #7 = Class              #25            // java/lang/Object
+   #8 = Utf8               PI
+   #9 = Utf8               D
+  #10 = Utf8               m
+  #11 = Utf8               I
+  #12 = Utf8               <init>
+  #13 = Utf8               ()V
+  #14 = Utf8               Code
+  #15 = Utf8               LineNumberTable
+  #16 = Utf8               inc
+  #17 = Utf8               ()I
+  #18 = Utf8               <clinit>
+  #19 = Utf8               SourceFile
+  #20 = Utf8               test.java
+  #21 = NameAndType        #12:#13        // "<init>":()V
+  #22 = NameAndType        #10:#11        // m:I
+  #23 = NameAndType        #8:#9          // PI:D
+  #24 = Utf8               test
+  #25 = Utf8               java/lang/Object
+{
+  public static double PI;
+    descriptor: D
+    flags: ACC_PUBLIC, ACC_STATIC
+
+  public test();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 1: 0
+
+  public int inc();
+    descriptor: ()I
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #2                  // Field m:I
+         4: iconst_1
+         5: iadd
+         6: ireturn
+      LineNumberTable:
+        line 5: 0
+
+  static {};
+    descriptor: ()V
+    flags: ACC_STATIC
+    Code:
+      stack=2, locals=0, args_size=0
+         0: ldc2_w        #3                  // double 3.14d
+         3: putstatic     #5                  // Field PI:D
+         6: return
+      LineNumberTable:
+        line 2: 0
+}
+SourceFile: "test.java"
