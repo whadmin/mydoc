@@ -1,0 +1,111 @@
+Compiled from "Javap01.java"
+public class com.wuhao.jvm.Javap01 {
+  public static final int _P_2;
+
+  public static final int _P_3;
+
+  public com.wuhao.jvm.Javap01();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: iconst_0
+       6: putfield      #2                  // Field count:I
+       9: return
+    LineNumberTable:
+      line 3: 0
+      line 7: 4
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: iconst_0
+       1: istore_1
+       2: iconst_0
+       3: istore_2
+       4: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       7: new           #4                  // class java/lang/StringBuilder
+      10: dup
+      11: invokespecial #5                  // Method java/lang/StringBuilder."<init>":()V
+      14: ldc           #6                  // String m =
+      16: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      19: iload_1
+      20: invokevirtual #8                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+      23: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      26: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      29: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      32: new           #4                  // class java/lang/StringBuilder
+      35: dup
+      36: invokespecial #5                  // Method java/lang/StringBuilder."<init>":()V
+      39: ldc           #11                 // String n =
+      41: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      44: iload_2
+      45: invokevirtual #8                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+      48: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      51: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      54: return
+    LineNumberTable:
+      line 14: 0
+      line 15: 4
+      line 16: 29
+      line 17: 54
+
+  public int add(int, int);
+    Code:
+       0: ldc           #12                 // String
+       2: astore_3
+       3: iload_1
+       4: istore        4
+       6: iload_1
+       7: istore        5
+       9: iload         4
+      11: iload         5
+      13: iadd
+      14: ireturn
+    LineNumberTable:
+      line 20: 0
+      line 21: 3
+      line 22: 6
+      line 23: 9
+
+  public java.lang.String link(java.lang.String, java.lang.String);
+    Code:
+       0: aload_1
+       1: astore_3
+       2: aload_2
+       3: astore        4
+       5: new           #4                  // class java/lang/StringBuilder
+       8: dup
+       9: invokespecial #5                  // Method java/lang/StringBuilder."<init>":()V
+      12: aload_1
+      13: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      16: aload_2
+      17: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      20: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      23: areturn
+    LineNumberTable:
+      line 27: 0
+      line 28: 2
+      line 29: 5
+
+  public void test3();
+    Code:
+       0: aload_0
+       1: dup
+       2: getfield      #2                  // Field count:I
+       5: iconst_1
+       6: iadd
+       7: putfield      #2                  // Field count:I
+      10: return
+    LineNumberTable:
+      line 33: 0
+      line 34: 10
+
+  static {};
+    Code:
+       0: iconst_3
+       1: putstatic     #14                 // Field _P_3:I
+       4: return
+    LineNumberTable:
+      line 10: 0
+      line 11: 4
+}

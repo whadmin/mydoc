@@ -1,0 +1,85 @@
+Classfile /D:/mydoc/jvm/demo/Javap03.class
+  Last modified 2018-11-2; size 362 bytes
+  MD5 checksum 4cb713e830cb6625770d821c6a3a6402
+  Compiled from "Javap03.java"
+public class Javap03
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #4.#15         // java/lang/Object."<init>":()V
+   #2 = Fieldref           #3.#16         // Javap03.count:I
+   #3 = Class              #17            // Javap03
+   #4 = Class              #18            // java/lang/Object
+   #5 = Utf8               count
+   #6 = Utf8               I
+   #7 = Utf8               <init>
+   #8 = Utf8               ()V
+   #9 = Utf8               Code
+  #10 = Utf8               LineNumberTable
+  #11 = Utf8               test
+  #12 = Utf8               test4
+  #13 = Utf8               SourceFile
+  #14 = Utf8               Javap03.java
+  #15 = NameAndType        #7:#8          // "<init>":()V
+  #16 = NameAndType        #5:#6          // count:I
+  #17 = Utf8               Javap03
+  #18 = Utf8               java/lang/Object
+{
+  public Javap03();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: iconst_0
+         6: putfield      #2                  // Field count:I
+         9: return
+      LineNumberTable:
+        line 1: 0
+        line 3: 4
+
+  public void test();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: dup
+         2: getfield      #2                  // Field count:I
+         5: iconst_1
+         6: iadd
+         7: putfield      #2                  // Field count:I
+        10: return
+      LineNumberTable:
+        line 6: 0
+        line 7: 10
+
+  public void test4();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=3, args_size=1
+         0: iconst_0
+         1: istore_1
+         2: iconst_0
+         3: istore_2
+         4: iload_1
+         5: iconst_1
+         6: iadd
+         7: istore_2
+         8: iload_1
+         9: iconst_1
+        10: iadd
+        11: istore_2
+        12: return
+      LineNumberTable:
+        line 10: 0
+        line 12: 2
+        line 13: 4
+        line 15: 8
+        line 16: 12
+}
+SourceFile: "Javap03.java"
