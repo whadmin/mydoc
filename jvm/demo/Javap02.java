@@ -4,6 +4,7 @@ public class Javap02 {
     private static final int _P_1 = 1;
     public static final int _P_2 = 2;
     public static final int  _P_3;
+	public int count=0;
     static {
         _P_3=_P_1+_P_2;
     }

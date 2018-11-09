@@ -1,90 +1,93 @@
 Classfile /D:/mydoc/jvm/demo/Javap02.class
-  Last modified 2018-11-2; size 1451 bytes
-  MD5 checksum 679ad73382156f403c7bc39ece95a57b
-  Compiled from "Javap02.java"
+  Last modified 2018-11-6; size 1486 bytes
+  MD5 checksum c639f3ac08f7918e3d88e667f94c6022
+  Compiled from "javap02.java"
 public class com.wuhao.jvm.Javap02
   minor version: 0
   major version: 52
   flags: ACC_PUBLIC, ACC_SUPER
 Constant pool:
-   #1 = Methodref          #18.#48        // java/lang/Object."<init>":()V
-   #2 = Fieldref           #49.#50        // java/lang/System.out:Ljava/io/PrintStream;
-   #3 = Class              #51            // java/lang/StringBuilder
-   #4 = Methodref          #3.#48         // java/lang/StringBuilder."<init>":()V
-   #5 = String             #52            // m =
-   #6 = Methodref          #3.#53         // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
-   #7 = Methodref          #3.#54         // java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
-   #8 = Methodref          #3.#55         // java/lang/StringBuilder.toString:()Ljava/lang/String;
-   #9 = Methodref          #56.#57        // java/io/PrintStream.println:(Ljava/lang/String;)V
-  #10 = String             #58            // n =
-  #11 = String             #59            //
-  #12 = String             #60            // sucess
-  #13 = String             #61            // finally
-  #14 = Class              #62            // java/lang/Exception
-  #15 = String             #63            // error
-  #16 = Class              #64            // com/wuhao/jvm/Javap02
-  #17 = Fieldref           #16.#65        // com/wuhao/jvm/Javap02._P_3:I
-  #18 = Class              #66            // java/lang/Object
-  #19 = Utf8               _P_1
-  #20 = Utf8               I
-  #21 = Utf8               ConstantValue
-  #22 = Integer            1
-  #23 = Utf8               _P_2
-  #24 = Integer            2
-  #25 = Utf8               _P_3
-  #26 = Utf8               <init>
-  #27 = Utf8               ()V
-  #28 = Utf8               Code
-  #29 = Utf8               LineNumberTable
-  #30 = Utf8               main
-  #31 = Utf8               ([Ljava/lang/String;)V
-  #32 = Utf8               add
-  #33 = Utf8               (II)I
-  #34 = Utf8               subtract
-  #35 = Utf8               multiply
-  #36 = Utf8               except
-  #37 = Utf8               residual
-  #38 = Utf8               exception
-  #39 = Utf8               ()Ljava/lang/String;
-  #40 = Utf8               StackMapTable
-  #41 = Class              #64            // com/wuhao/jvm/Javap02
-  #42 = Class              #67            // java/lang/String
-  #43 = Class              #62            // java/lang/Exception
-  #44 = Class              #68            // java/lang/Throwable
-  #45 = Utf8               <clinit>
-  #46 = Utf8               SourceFile
-  #47 = Utf8               Javap02.java
-  #48 = NameAndType        #26:#27        // "<init>":()V
-  #49 = Class              #69            // java/lang/System
-  #50 = NameAndType        #70:#71        // out:Ljava/io/PrintStream;
-  #51 = Utf8               java/lang/StringBuilder
-  #52 = Utf8               m =
-  #53 = NameAndType        #72:#73        // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
-  #54 = NameAndType        #72:#74        // append:(I)Ljava/lang/StringBuilder;
-  #55 = NameAndType        #75:#39        // toString:()Ljava/lang/String;
-  #56 = Class              #76            // java/io/PrintStream
-  #57 = NameAndType        #77:#78        // println:(Ljava/lang/String;)V
-  #58 = Utf8               n =
-  #59 = Utf8
-  #60 = Utf8               sucess
-  #61 = Utf8               finally
-  #62 = Utf8               java/lang/Exception
-  #63 = Utf8               error
-  #64 = Utf8               com/wuhao/jvm/Javap02
-  #65 = NameAndType        #25:#20        // _P_3:I
-  #66 = Utf8               java/lang/Object
-  #67 = Utf8               java/lang/String
-  #68 = Utf8               java/lang/Throwable
-  #69 = Utf8               java/lang/System
-  #70 = Utf8               out
-  #71 = Utf8               Ljava/io/PrintStream;
-  #72 = Utf8               append
-  #73 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
-  #74 = Utf8               (I)Ljava/lang/StringBuilder;
-  #75 = Utf8               toString
-  #76 = Utf8               java/io/PrintStream
-  #77 = Utf8               println
-  #78 = Utf8               (Ljava/lang/String;)V
+   #1 = Methodref          #19.#50        // java/lang/Object."<init>":()V
+   #2 = Fieldref           #17.#51        // com/wuhao/jvm/Javap02.count:I
+   #3 = Fieldref           #52.#53        // java/lang/System.out:Ljava/io/PrintStream;
+   #4 = Class              #54            // java/lang/StringBuilder
+   #5 = Methodref          #4.#50         // java/lang/StringBuilder."<init>":()V
+   #6 = String             #55            // m =
+   #7 = Methodref          #4.#56         // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #8 = Methodref          #4.#57         // java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+   #9 = Methodref          #4.#58         // java/lang/StringBuilder.toString:()Ljava/lang/String;
+  #10 = Methodref          #59.#60        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #11 = String             #61            // n =
+  #12 = String             #62            //
+  #13 = String             #63            // sucess
+  #14 = String             #64            // finally
+  #15 = Class              #65            // java/lang/Exception
+  #16 = String             #66            // error
+  #17 = Class              #67            // com/wuhao/jvm/Javap02
+  #18 = Fieldref           #17.#68        // com/wuhao/jvm/Javap02._P_3:I
+  #19 = Class              #69            // java/lang/Object
+  #20 = Utf8               _P_1
+  #21 = Utf8               I
+  #22 = Utf8               ConstantValue
+  #23 = Integer            1
+  #24 = Utf8               _P_2
+  #25 = Integer            2
+  #26 = Utf8               _P_3
+  #27 = Utf8               count
+  #28 = Utf8               <init>
+  #29 = Utf8               ()V
+  #30 = Utf8               Code
+  #31 = Utf8               LineNumberTable
+  #32 = Utf8               main
+  #33 = Utf8               ([Ljava/lang/String;)V
+  #34 = Utf8               add
+  #35 = Utf8               (II)I
+  #36 = Utf8               subtract
+  #37 = Utf8               multiply
+  #38 = Utf8               except
+  #39 = Utf8               residual
+  #40 = Utf8               exception
+  #41 = Utf8               ()Ljava/lang/String;
+  #42 = Utf8               StackMapTable
+  #43 = Class              #67            // com/wuhao/jvm/Javap02
+  #44 = Class              #70            // java/lang/String
+  #45 = Class              #65            // java/lang/Exception
+  #46 = Class              #71            // java/lang/Throwable
+  #47 = Utf8               <clinit>
+  #48 = Utf8               SourceFile
+  #49 = Utf8               javap02.java
+  #50 = NameAndType        #28:#29        // "<init>":()V
+  #51 = NameAndType        #27:#21        // count:I
+  #52 = Class              #72            // java/lang/System
+  #53 = NameAndType        #73:#74        // out:Ljava/io/PrintStream;
+  #54 = Utf8               java/lang/StringBuilder
+  #55 = Utf8               m =
+  #56 = NameAndType        #75:#76        // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #57 = NameAndType        #75:#77        // append:(I)Ljava/lang/StringBuilder;
+  #58 = NameAndType        #78:#41        // toString:()Ljava/lang/String;
+  #59 = Class              #79            // java/io/PrintStream
+  #60 = NameAndType        #80:#81        // println:(Ljava/lang/String;)V
+  #61 = Utf8               n =
+  #62 = Utf8
+  #63 = Utf8               sucess
+  #64 = Utf8               finally
+  #65 = Utf8               java/lang/Exception
+  #66 = Utf8               error
+  #67 = Utf8               com/wuhao/jvm/Javap02
+  #68 = NameAndType        #26:#21        // _P_3:I
+  #69 = Utf8               java/lang/Object
+  #70 = Utf8               java/lang/String
+  #71 = Utf8               java/lang/Throwable
+  #72 = Utf8               java/lang/System
+  #73 = Utf8               out
+  #74 = Utf8               Ljava/io/PrintStream;
+  #75 = Utf8               append
+  #76 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #77 = Utf8               (I)Ljava/lang/StringBuilder;
+  #78 = Utf8               toString
+  #79 = Utf8               java/io/PrintStream
+  #80 = Utf8               println
+  #81 = Utf8               (Ljava/lang/String;)V
 {
   public static final int _P_2;
     descriptor: I
@@ -95,16 +98,24 @@ Constant pool:
     descriptor: I
     flags: ACC_PUBLIC, ACC_STATIC, ACC_FINAL
 
+  public int count;
+    descriptor: I
+    flags: ACC_PUBLIC
+
   public com.wuhao.jvm.Javap02();
     descriptor: ()V
     flags: ACC_PUBLIC
     Code:
-      stack=1, locals=1, args_size=1
+      stack=2, locals=1, args_size=1
          0: aload_0
          1: invokespecial #1                  // Method java/lang/Object."<init>":()V
-         4: return
+         4: aload_0
+         5: iconst_0
+         6: putfield      #2                  // Field count:I
+         9: return
       LineNumberTable:
         line 3: 0
+        line 7: 4
 
   public static void main(java.lang.String[]);
     descriptor: ([Ljava/lang/String;)V
@@ -115,32 +126,32 @@ Constant pool:
          1: istore_1
          2: iconst_0
          3: istore_2
-         4: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
-         7: new           #3                  // class java/lang/StringBuilder
+         4: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         7: new           #4                  // class java/lang/StringBuilder
         10: dup
-        11: invokespecial #4                  // Method java/lang/StringBuilder."<init>":()V
-        14: ldc           #5                  // String m =
-        16: invokevirtual #6                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        11: invokespecial #5                  // Method java/lang/StringBuilder."<init>":()V
+        14: ldc           #6                  // String m =
+        16: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
         19: iload_1
-        20: invokevirtual #7                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
-        23: invokevirtual #8                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
-        26: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
-        29: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
-        32: new           #3                  // class java/lang/StringBuilder
+        20: invokevirtual #8                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        23: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        26: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        29: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        32: new           #4                  // class java/lang/StringBuilder
         35: dup
-        36: invokespecial #4                  // Method java/lang/StringBuilder."<init>":()V
-        39: ldc           #10                 // String n =
-        41: invokevirtual #6                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        36: invokespecial #5                  // Method java/lang/StringBuilder."<init>":()V
+        39: ldc           #11                 // String n =
+        41: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
         44: iload_2
-        45: invokevirtual #7                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
-        48: invokevirtual #8                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
-        51: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        45: invokevirtual #8                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        48: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        51: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
         54: return
       LineNumberTable:
-        line 12: 0
-        line 13: 4
-        line 14: 29
-        line 15: 54
+        line 13: 0
+        line 14: 4
+        line 15: 29
+        line 16: 54
 
   public int add(int, int);
     descriptor: (II)I
@@ -154,8 +165,8 @@ Constant pool:
          4: iload_3
          5: ireturn
       LineNumberTable:
-        line 18: 0
-        line 19: 4
+        line 19: 0
+        line 20: 4
 
   public int subtract(int, int);
     descriptor: (II)I
@@ -169,8 +180,8 @@ Constant pool:
          4: iload_3
          5: ireturn
       LineNumberTable:
-        line 23: 0
-        line 24: 4
+        line 24: 0
+        line 25: 4
 
   public int multiply(int, int);
     descriptor: (II)I
@@ -184,8 +195,8 @@ Constant pool:
          4: iload_3
          5: ireturn
       LineNumberTable:
-        line 28: 0
-        line 29: 4
+        line 29: 0
+        line 30: 4
 
   public int except(int, int);
     descriptor: (II)I
@@ -199,8 +210,8 @@ Constant pool:
          4: iload_3
          5: ireturn
       LineNumberTable:
-        line 33: 0
-        line 34: 4
+        line 34: 0
+        line 35: 4
 
   public int residual(int, int);
     descriptor: (II)I
@@ -214,33 +225,33 @@ Constant pool:
          4: iload_3
          5: ireturn
       LineNumberTable:
-        line 38: 0
-        line 39: 4
+        line 39: 0
+        line 40: 4
 
   public java.lang.String exception();
     descriptor: ()Ljava/lang/String;
     flags: ACC_PUBLIC
     Code:
       stack=2, locals=4, args_size=1
-         0: ldc           #11                 // String
+         0: ldc           #12                 // String
          2: astore_1
-         3: ldc           #12                 // String sucess
+         3: ldc           #13                 // String sucess
          5: astore_1
-         6: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
-         9: ldc           #13                 // String finally
-        11: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         6: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         9: ldc           #14                 // String finally
+        11: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
         14: goto          43
         17: astore_2
-        18: ldc           #15                 // String error
+        18: ldc           #16                 // String error
         20: astore_1
-        21: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
-        24: ldc           #13                 // String finally
-        26: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        21: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        24: ldc           #14                 // String finally
+        26: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
         29: goto          43
         32: astore_3
-        33: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
-        36: ldc           #13                 // String finally
-        38: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        33: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        36: ldc           #14                 // String finally
+        38: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
         41: aload_3
         42: athrow
         43: aload_1
@@ -251,16 +262,16 @@ Constant pool:
              3     6    32   any
             17    21    32   any
       LineNumberTable:
-        line 43: 0
-        line 45: 3
-        line 49: 6
-        line 50: 14
-        line 46: 17
-        line 47: 18
-        line 49: 21
-        line 50: 29
-        line 49: 32
-        line 51: 43
+        line 44: 0
+        line 46: 3
+        line 50: 6
+        line 51: 14
+        line 47: 17
+        line 48: 18
+        line 50: 21
+        line 51: 29
+        line 50: 32
+        line 52: 43
       StackMapTable: number_of_entries = 3
         frame_type = 255 /* full_frame */
           offset_delta = 17
@@ -276,10 +287,10 @@ Constant pool:
     Code:
       stack=1, locals=0, args_size=0
          0: iconst_3
-         1: putstatic     #17                 // Field _P_3:I
+         1: putstatic     #18                 // Field _P_3:I
          4: return
       LineNumberTable:
-        line 8: 0
-        line 9: 4
+        line 9: 0
+        line 10: 4
 }
-SourceFile: "Javap02.java"
+SourceFile: "javap02.java"
