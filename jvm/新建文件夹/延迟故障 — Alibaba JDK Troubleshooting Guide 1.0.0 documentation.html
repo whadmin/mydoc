@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-02/section.html -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>延迟故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="./延迟故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/theme.css" type="text/css">
+  <link rel="stylesheet" href="./延迟故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/pygments.css" type="text/css">
+    <link rel="index" title="Index" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/genindex.html">
+    <link rel="search" title="Search" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/search.html">
+    <link rel="next" title="应用暂停异常" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-02/subsection-01.html">
+    <link rel="prev" title="GC触发异常" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/subsection-03.html"> 
+
+  
+  <script src="./延迟故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/modernizr.min.js.下载"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/index.html" class="icon icon-home"> Alibaba JDK Troubleshooting Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/section.html">内存故障</a></li>
+<li class="toctree-l1 current"><a class="reference internal current" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-02/section.html#"><span class="toctree-expand"></span>延迟故障</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-02/subsection-01.html">应用暂停异常</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-02/subsection-02.html">GC暂停异常</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/index.html">Alibaba JDK Troubleshooting Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/index.html">Docs</a> »</li>
+        
+      <li>延迟故障</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/_sources/chapter-01/section-02/section.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>延迟故障<a class="headerlink" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-02/section.html#id1" title="Permalink to this headline">¶</a></h1>
+<p>这是Java常见的一种故障，主要表现就是Java应用的响应延迟异常。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-02/subsection-01.html">应用暂停异常</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-02/subsection-02.html">GC暂停异常</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-02/subsection-01.html" class="btn btn-neutral float-right" title="应用暂停异常" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/subsection-03.html" class="btn btn-neutral" title="GC触发异常" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr>
+
+  <div role="contentinfo">
+    <p>
+        © Copyright 2018, fangxi.yfx.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org/">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="./延迟故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/jquery.js.下载"></script>
+      <script type="text/javascript" src="./延迟故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/underscore.js.下载"></script>
+      <script type="text/javascript" src="./延迟故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/doctools.js.下载"></script>
+
+  
+
+  <script type="text/javascript" src="./延迟故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/theme.js.下载"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+
+</body></html>

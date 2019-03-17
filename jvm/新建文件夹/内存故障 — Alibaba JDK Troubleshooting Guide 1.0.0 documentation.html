@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/section.html -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>内存故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="./内存故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/theme.css" type="text/css">
+  <link rel="stylesheet" href="./内存故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/pygments.css" type="text/css">
+    <link rel="index" title="Index" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/genindex.html">
+    <link rel="search" title="Search" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/search.html">
+    <link rel="next" title="堆外内存增涨异常" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/subsection-01.html">
+    <link rel="prev" title="阿里巴巴JDK故障排查指南" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/index.html"> 
+
+  
+  <script src="./内存故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/modernizr.min.js.下载"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/index.html" class="icon icon-home"> Alibaba JDK Troubleshooting Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/section.html#"><span class="toctree-expand"></span>内存故障</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/subsection-01.html">堆外内存增涨异常</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/subsection-02.html">堆内内存增涨异常</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/subsection-03.html">GC触发异常</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-02/section.html">延迟故障</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/index.html">Alibaba JDK Troubleshooting Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/index.html">Docs</a> »</li>
+        
+      <li>内存故障</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/_sources/chapter-01/section-01/section.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="memory-issues">
+<span id="id1"></span><h1>内存故障<a class="headerlink" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/section.html#memory-issues" title="Permalink to this headline">¶</a></h1>
+<p>Java的内存分为两类，一类是堆内内存，另外一类是堆外内存。</p>
+<p>堆外内存指的是不受JVM虚拟机垃圾回收器管理的内存，这部分内存一般包括Metaspace，通过Unsafe分配的内存，JVM内部为虚拟机服务的内存以及用户JNI内部自行维护的内存（这些部分内存主要是通过c／cpp传统的new，malloc来分配的，值得注意的是JNI API提供了一些创建对象的API比如NewObject，NewObjectArray等，这些API创建的对象是不算在堆外的）等等。由于这部分内存不受JVM垃圾回收器的管理，如果使用方式不正确，很容易造成内存故障。</p>
+<p>与堆外内存相对应的是堆内内存，堆内内存主要是指受到JVM虚拟机垃圾回收器管理的内存，主要包括Java程序中通过new关键字分配的对象，JNI方法通过JNI方法比如NewObject，NewObjectArray等方法创建的对象等等。这些对象被垃圾回收器管理，用户不需要显式得进行内存释放的操作，垃圾回收器根据一定的策略，发现堆内的内存不再被程序使用了，它会自动进行对象以及内存的清理。</p>
+<p>内存故障是Java应用经常遇到的一类故障, 这类故障的表现多种多样，有的内存故障会造成GC异常，从而影响应用的响应时间和吞吐量，有的堆外泄漏直接引起OS的OOM Killer，还有的内存故障比如CodeCache则可能造成应用的CPU Load突然升高等等。</p>
+<p>排查人员接到报警后，通过系统命令(top, tsar, jstat等)、查看gc日志、查看应用业务日志等手段可以快速识别这类故障，然后对故障进行归纳分类，从而进入本规范相应的条目进行排查。</p>
+<p>在排查内存故障之前，排查人员需要对内存概念及知识点有正确认识，请参考相应章节 。排查流程当中也会有的链接进行跳转。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/subsection-01.html">堆外内存增涨异常</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/subsection-02.html">堆内内存增涨异常</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/subsection-03.html">GC触发异常</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/chapter-01/section-01/subsection-01.html" class="btn btn-neutral float-right" title="堆外内存增涨异常" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="http://ci.jvm.alibaba.net/vmfarm/AlibabaJDKTroubleshootingGuide/v1.0.0/index.html" class="btn btn-neutral" title="阿里巴巴JDK故障排查指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr>
+
+  <div role="contentinfo">
+    <p>
+        © Copyright 2018, fangxi.yfx.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org/">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="./内存故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/jquery.js.下载"></script>
+      <script type="text/javascript" src="./内存故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/underscore.js.下载"></script>
+      <script type="text/javascript" src="./内存故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/doctools.js.下载"></script>
+
+  
+
+  <script type="text/javascript" src="./内存故障 — Alibaba JDK Troubleshooting Guide 1.0.0 documentation_files/theme.js.下载"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+
+</body></html>
